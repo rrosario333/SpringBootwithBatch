@@ -1,0 +1,36 @@
+buildscript {
+    repositories{
+        mavenCentral()
+    }
+    dependencies {
+        classpath('org.springframework.boot:spring-boot-gradle-plugin:1.5.7.RELEASE')
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'file://' + new File('repo').absolutePath
+    }
+}
+
+dependencies {
+    compile(
+            'org.apache.commons:commons-lang3:3.4',
+            'org.springframework.boot:spring-boot-starter-batch',
+            'org.springframework.boot:spring-boot-starter-data-jpa',
+            'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework.boot:spring-boot-starter-jdbc',
+            'org.springframework:spring-oxm'
+    )
+    runtime(
+            'org.liquibase:liquibase-core',
+            'com.h2database:h2'
+    )
+}
