@@ -17,9 +17,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * @author Petri Kainulainen
- */
 @Configuration
 public class RESTStudentJobConfig {
 
@@ -46,7 +43,7 @@ public class RESTStudentJobConfig {
                          ItemWriter<StudentDTO> restStudentWriter,
                          StepBuilderFactory stepBuilderFactory) {
         return stepBuilderFactory.get("restStudentStep")
-                .<StudentDTO, StudentDTO>chunk(5)
+                .<StudentDTO, StudentDTO>chunk(10000)
                 .reader(restStudentReader)
                 .processor(restStudentProcessor)
                 .writer(restStudentWriter)

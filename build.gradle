@@ -27,7 +27,9 @@ dependencies {
             'org.springframework.boot:spring-boot-starter-data-jpa',
             'org.springframework.boot:spring-boot-starter-web',
             'org.springframework.boot:spring-boot-starter-jdbc',
-            'org.springframework:spring-oxm'
+            'org.springframework:spring-oxm',
+            'com.itextpdf:itextpdf:5.0.6'
+            
     )
     runtime(
             'org.liquibase:liquibase-core',
