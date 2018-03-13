@@ -26,3 +26,5 @@ If you want to use Gradle, you can run the application by using the following co
 
 	gradle clean bootRun
 	
+	https://github.com/springfox/springfox/issues/1443
+	
